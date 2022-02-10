@@ -103,16 +103,16 @@ button:hover{
 	<form class="forms" action="salvarProduto">
 	<fieldset class="campo">
 		<label>Nome:</label>
-		<input type="text" name="nome" required="required">
+		<input type="text" name="nome" required="required" value="${produto.nome }">
 		<br>
 		<label>Data de Validade:</label>
-		<input type="date" name="dataValidade" required="required">
+		<input type="date" name="dataValidade" required="required" value="${produto.dataValidade.time }">
 		<br>
 		<label>Preço do Produto:</label>
-		<input type="text" name="preco" step="0.1" required="required">
+		<input type="text" name="preco" step="0.1" required="required" value="${produto.preco }">
 		<br>
 		<label>Estoque: </label>
-		<input type="number" name="estoque" required="required" >
+		<input type="number" name="estoque" required="required" value="${produto.estoque }">
 		<br>
 		<label>Tipo de produto</label>
 		<select name="tipoProduto">

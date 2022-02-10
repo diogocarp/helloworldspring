@@ -30,8 +30,35 @@ public class ProdutoController {
 			
 			DaoProduto dao = new DaoProduto();
 			dao.inserir(produto);
-			return "redirect:formProduto";
+			return "redirect:listarProduto";
 			
+	}
+	
+	
+	@RequestMapping("listarProduto")
+	public String listarProdutos(Model model) {
+		DaoProduto dao = new DaoProduto();
+		model.addAttribute("produtos", dao.listar());
+		return "listaproduto";
+		
+	}
+	
+	@RequestMapping("excluirProduto")
+	public String excluir(long idProduto) {
+		DaoProduto dao = new DaoProduto();
+		dao.excluir(idProduto);
+		return "redirect:listarProduto";
+		
+		
+	}
+	
+	@RequestMapping("alterarProduto")
+	public String altarar(long idProduto, Model model) {
+		DaoProduto dao = new DaoProduto();
+		model.addAttribute("produto", dao.buscar(idProduto));
+		return "forward:formProduto";
+		
+		
 	}
 	
 

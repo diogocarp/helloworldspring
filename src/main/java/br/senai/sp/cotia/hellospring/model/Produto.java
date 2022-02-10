@@ -51,6 +51,11 @@ public class Produto {
 		this.tipoProduto = tipoProduto;
 	}
 	
-	
+	public boolean isVencido() {
+		
+			return Calendar.getInstance().after(dataValidade);
+		
+		
+	}
 	
 }
